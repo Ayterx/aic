@@ -1,0 +1,29 @@
+import { Callout } from "~/app/docs/_components/callout"
+
+# Deployment
+
+**General**
+
+- Create a new OpenAI API key [here](https://platform.openai.com/api-keys).
+- You can use `pnpm` instead of `npm` for faster experience. [Learn more](https://pnpm.io).
+
+---
+
+## VPS/Dedicated Server
+
+1. Install [Node.js](https://nodejs.org/en) version _22.12.0_ or higher.
+2. Create an `.env` file in the root of the project and add your `OPENAI_API_KEY` and `DATABASE_URL` as follows:
+
+```
+OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+DATABASE_URL="file:./database.sqlite"
+```
+
+3. Run `npm run db:push` to create the database.
+4. Run `npm run build` to build production version of the project.
+5. Run `npm run start` to start the production server.
+
+<Callout>
+  The server will be available at port _3000_. More information about the server can be found
+  [here](https://nextjs.org/docs/app/api-reference/cli/next#next-start-options).
+</Callout>
